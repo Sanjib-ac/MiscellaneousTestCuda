@@ -10,7 +10,7 @@
 #include <windows.h>
 #include <cstdio>      // for FILE, freopen_s
 
-// Tracks whether we've already attached/allocated a console
+// attached/allocated a console
 static bool console_initialized = false;
 
 // Ensures a console is available for stdout/stderr
@@ -40,7 +40,7 @@ inline void cudaSafeCall(cudaError_t err, const char* file, int line) {
     }
 }
 
-// Macro wrapper so you can write CUDA_SAFE_CALL(cudaFoo(...));
+// Macro wrapper - write CUDA_SAFE_CALL(cudaFoo(...));
 #define CUDA_SAFE_CALL(call) cudaSafeCall((call), __FILE__, __LINE__)
 
 extern "C" {
