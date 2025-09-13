@@ -18,6 +18,15 @@ extern "C" {
 	LABVIEWCUDAMEMORY_API void ShowImageFromPlanarRGB(unsigned char* data, int channels, int height, int width);
 	LABVIEWCUDAMEMORY_API void ShowImageFromInterleavedRGB(unsigned char* data, int height, int width);
 	LABVIEWCUDAMEMORY_API void ShowImageFromPlanarU16RGB(const uint16_t* data, int height, int width);
+	LABVIEWCUDAMEMORY_API  int DemosaicRGGBNearest(
+		const unsigned char* rawU8,
+		unsigned long byteCount,
+		int width,      // pass 0 - default 1280
+		int height,     // pass 0 - default 2880
+		float scaleR,   // pass 0.f - default 0.10f
+		float scaleG,   // pass 0.f - default 0.11f
+		float scaleB    // pass 0.f - default 0.13f
+	);
 }
 
 #endif // LABVIEWCUDAMEMORY_H
